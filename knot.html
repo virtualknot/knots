@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Virtual Torus Knot</title>
+
   <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   <script src="https://rawgit.com/ngokevin/aframe-text-component/master/dist/aframe-text-component.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  <!-- <link rel="shortcut icon" href="/favicon.png" type="image/png"/> -->
 </head>
 <body>
-  <a-scene>
+  <a-scene fog="type:linear; color:grey;">
     <!-- cam -->
     <a-entity id="camera" rotation="0 0 0" position="0 0 3">
       <a-camera>
@@ -19,8 +21,7 @@
       <a-entity geometry="primitive:torusKnot" material="color:#D5573B">
       </a-entity>
     </a-entity>
-    <a-sky color="#777DA7">
-    </a-sky>
+    <a-sky color="#777DA7"></a-sky>
   </a-scene>
 </body>
 </html>
