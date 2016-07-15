@@ -6,6 +6,10 @@
   <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
   <!-- <link rel="shortcut icon" href="/favicon.png" type="image/png"/> -->
+  <script>
+    var pVal = 2;
+    var qVal = 3;
+  </script>
 </head>
 <body>
   <a-scene>
@@ -17,7 +21,7 @@
     </a-entity>
     <!-- #knot -->
     <a-entity id="knot">
-      <a-entity geometry="primitive:torusKnot; p:2; q:3" material="color:#D5573B"></a-entity>
+      <a-entity geometry="primitive:torusKnot; p:" + pVal + "; q:" + qVal+ ";" material="color:#D5573B"></a-entity>
     </a-entity>
     <a-entity id="up">
       <a-entity geometry="primitive:plane" position ="-4 0 0" material="color:pink"</a-entity>
