@@ -16,7 +16,7 @@
     </a-entity>
     <!-- #knot -->
     <a-entity id="knot">
-      <a-entity geometry="primitive:torusKnot; p:" + pVal + "; q:" + qVal+ ";" material="color:#D5573B"></a-entity>
+      <a-entity id="knott" geometry="primitive:torusKnot; p:" + pVal + "; q:" + qVal+ ";" material="color:#D5573B"></a-entity>
     </a-entity>
     <a-entity id="upP">
       <a-entity geometry="primitive:plane" position ="-4 1 0" material="color:pink"</a-entity>
@@ -37,7 +37,8 @@
   var pVal = 2;
   var qVal = 3;
   $('#upP').on('click', function() {
-    $('#knott').attr("geometry", "primitive:torusKnot; p:3; q:4");
+    pVal++
+    $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + ";");
   });
   </script>
 </body>
