@@ -45,6 +45,14 @@
     pVal--
     $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + ";");
   });
+  $('#upQ').on('click', function() {
+    qVal++
+    $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + ";");
+  });
+  $('#downQ').on('click', function() {
+    qVal--
+    $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + ";");
+  });
   </script>
 </body>
 </html>
