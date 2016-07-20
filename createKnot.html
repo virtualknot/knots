@@ -34,10 +34,15 @@
 
   </a-scene>
   <script>
+  //mind your p's and q's
   var pVal = 2;
   var qVal = 3;
   $('#upP').on('click', function() {
     pVal++
+    $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + ";");
+  });
+  $('#downP').on('click', function() {
+    pVal--
     $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + ";");
   });
   </script>
