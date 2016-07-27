@@ -40,9 +40,7 @@
     <a-entity class="vals" position="-5.55 -1 0"material="color:green" text="text:down"></a-entity>
 
     adjust tubular radius
-    <a-entity>
       <a-entity id="downRadius" geometry="primitive:plane" position ="-3.55 0 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-128.png)"</a-entity>
-    </a-entity>
     buttons that adjust the
     <a-sky color="#777DA7"></a-sky>
   </a-scene>
@@ -74,6 +72,9 @@
     $('.qValText').attr("text", "text:qVal: " + qVal);
   });
 
+  $('#downRadius').on('click', function() {
+    radius = radius - .02;
+    $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
   });
   </script>
 </body>
