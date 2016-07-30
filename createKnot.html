@@ -51,24 +51,24 @@
   var radius = 0.2;
   $('#upP').on('click', function() {
     pVal++
-    $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + ";");
+    $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
     $('.pValText').attr("text", "text:pVal: " + pVal);
   });
   $('#downP').on('click', function() {
     pVal--
-    $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + ";");
+    $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
     $('.pValText').attr("text", "text:pVal: " + pVal);
 
   });
   $('#upQ').on('click', function() {
     qVal++
-    $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + ";");
+    $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
     $('.qValText').attr("text", "text:qVal: " + qVal);
 
   });
   $('#downQ').on('click', function() {
     qVal--
-    $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + ";");
+    $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
     $('.qValText').attr("text", "text:qVal: " + qVal);
   });
 
