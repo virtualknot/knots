@@ -39,13 +39,11 @@
     <!-- radius button and descriptions -->
     <a-entity class="vals radiusText" position="2.15 0 0" material="color:#F7CAC9" scale=".4 .4 .4" text="text:radius"></a-entity>
     <a-entity>
-      <a-entity id="downRadius" geometry="primitive:plane" scale=".7 .7 .7" position ="2.5 -1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-128.png)"</a-entity>
-    </a-entity>
-    <a-entity>
       <a-entity id="upRadius" geometry="primitive:plane" scale=".7 .7 .7" position ="2.5 1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-up-b-128.png)"</a-entity>
     </a-entity>
-
-    <!-- buttons that adjust the -->
+    <a-entity>
+      <a-entity id="downRadius" geometry="primitive:plane" scale=".7 .7 .7" position ="2.5 -1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-128.png)"</a-entity>
+    </a-entity>
     <a-sky color="#777DA7"></a-sky>
   </a-scene>
   <script>
@@ -68,12 +66,15 @@
     qVal++
     $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
     $('.qValText').attr("text", "text:qVal: " + qVal);
-
   });
   $('#downQ').on('click', function() {
     qVal--
     $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
     $('.qValText').attr("text", "text:qVal: " + qVal);
+  });
+  $('#upRadius').on('click', function() {
+    radius = radius + .02;
+    $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
   });
 
   $('#downRadius').on('click', function() {
