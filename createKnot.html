@@ -20,6 +20,7 @@
     <a-entity id="knot">
       <a-entity id="knott" geometry="primitive:torusKnot; p:" + pVal + "; q:" + qVal+ ";" material="color:#D5573B"></a-entity>
     </a-entity>
+    <!-- knot p and q val buttons -->
     <a-entity>
       <a-entity id="upP" geometry="primitive:plane" scale=".7 .7 .7" position ="-3.5 1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-up-b-128.png)"</a-entity>
     </a-entity>
@@ -32,15 +33,14 @@
     <a-entity>
       <a-entity id="downQ" geometry="primitive:plane" scale=".7 .7 .7" position ="-2.5 -1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-128.png)"</a-entity>
     </a-entity>
-
     <!-- to have button descriptions for the knot's p and q value -->
     <a-entity class="vals pValText" position="-3.75 0 0" material="color:purple" scale=".4 .4 .4" text="text:pVal"></a-entity>
     <a-entity class="vals qValText" position="-2.75 0 0" material="color:#F7CAC9" scale=".4 .4 .4" text="text:qVal"></a-entity>
-
-    <a-entity class="vals qValText" position="2.15 0 0" material="color:#F7CAC9" scale=".4 .4 .4" text="text:radius"></a-entity>
-
-    <!-- adjust tubular radius -->
+    <!-- radius button and descriptions -->
+    <a-entity class="vals radiusText" position="2.15 0 0" material="color:#F7CAC9" scale=".4 .4 .4" text="text:radius"></a-entity>
     <a-entity id="downRadius" geometry="primitive:plane" scale=".7 .7 .7" position ="2.5 -1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-128.png)"</a-entity>
+    <a-entity id="upRadius" geometry="primitive:plane" scale=".7 .7 .7" position ="2.5 1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-up-b-128.png)"</a-entity>
+
     <!-- buttons that adjust the -->
     <a-sky color="#777DA7"></a-sky>
   </a-scene>
