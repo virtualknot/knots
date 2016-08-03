@@ -6,7 +6,6 @@
   <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
   <script src="https://rawgit.com/ngokevin/aframe-text-component/master/dist/aframe-text-component.min.js"></script>
-
 </head>
 <body>
   <a-scene>
@@ -51,6 +50,7 @@
   var pVal = 2;
   var qVal = 3;
   var radius = 0.2;
+  var rotation = "0 0 0";
   $('#upP').on('click', function() {
     pVal++
     $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
