@@ -53,10 +53,13 @@
   var rotation = "0 0 0";
   var refreshKnot = function() {
     return $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
-  }
+  };
   var valText = function(target, val) {
     $(target).attr("text", "text:pVal: " + val);
-  }
+  };
+  var radiusText = function() {
+    return $('.radiusText').attr("text", "text:radius: " + radius.toFixed(2));
+  };
   $('#upP').on('click', function() {
     pVal++
     refreshKnot();
@@ -80,13 +83,13 @@
   $('#upRadius').on('click', function() {
     radius = radius + .01;
     refreshKnot();
-    $('.radiusText').attr("text", "text:radius: " + radius.toFixed(2));
+    radiusText();
   });
 
   $('#downRadius').on('click', function() {
     radius = radius - .01;
     refreshKnot();
-    $('.radiusText').attr("text", "text:radius: " + radius.toFixed(2));
+    radiusText();
   });
   </script>
 </body>
