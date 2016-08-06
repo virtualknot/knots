@@ -54,26 +54,28 @@
   var refreshKnot = function() {
     return $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
   }
+  var valText = function(target, val) {
+    $(target).attr("text", "text:pVal: " + val);
+  }
   $('#upP').on('click', function() {
     pVal++
     refreshKnot();
-    $('.pValText').attr("text", "text:pVal: " + pVal);
+    valText('.pValText', pVal);
   });
   $('#downP').on('click', function() {
     pVal--
     refreshKnot();
-    $('.pValText').attr("text", "text:pVal: " + pVal);
-
+    valText('.pValText', pVal);
   });
   $('#upQ').on('click', function() {
     qVal++
     refreshKnot();
-    $('.qValText').attr("text", "text:qVal: " + qVal);
+    valText('.qValText', qVal);
   });
   $('#downQ').on('click', function() {
     qVal--
     refreshKnot();
-    $('.qValText').attr("text", "text:qVal: " + qVal);
+    valText('.qValText', qVal);
   });
   $('#upRadius').on('click', function() {
     radius = radius + .01;
