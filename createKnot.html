@@ -17,7 +17,7 @@
     </a-entity>
     <!-- #knot -->
     <a-entity id="knot">
-      <a-entity id="knott" geometry="primitive:torusKnot; p:" + pVal + "; q:" + qVal+ ";" material="color:#D5573B"></a-entity>
+      <a-entity id="knott" geometry="primitive:torusKnot; p:" + pVal + "; q:" + qVal+ ";" rotation="0 0 0" material="color:#D5573B"></a-entity>
     </a-entity>
     <!-- knot p and q val buttons -->
     <a-entity>
@@ -60,10 +60,16 @@
   var pVal = 2;
   var qVal = 3;
   var radius = 0.2;
-  var rotation = "0 0 0";
+  var a = 0;
+  var b = 0;
+  var c = 0;
+  var rotation = " " + a + " " + b + " " + c + " ";
+  console.log(rotation);
+  console.log(c)
   // updated knot after value knot changes, refactor
   var refreshKnot = function() {
-    return $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
+    $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
+    $('#knott').attr("rotation", rotation);
   };
   // updates value text tags after knot changes, refactor
   var valText = function(target, val) {
@@ -101,6 +107,12 @@
   });
   $('#downRadius').on('click', function() {
     radius = radius - .01;
+    refreshKnot();
+    radiusText();
+  });
+  $('#leftRotation').on('click', function() {
+    a = a + 20;
+    rotation = " " + a + " " + b + " " + c + " ";
     refreshKnot();
     radiusText();
   });
