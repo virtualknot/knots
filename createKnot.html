@@ -77,7 +77,7 @@
   var radiusText = function() {
     return $('.radiusText').attr("text", "text:radius: " + radius.toFixed(2));
   };
-  //button actions
+  //Button actions to change p and q values
   $('#upP').on('click', function() {
     pVal++
     refreshKnot();
@@ -98,6 +98,7 @@
     refreshKnot();
     valText('.qValText', qVal);
   });
+  //Button actions to change radius of knot
   $('#upRadius').on('click', function() {
     radius = radius + .01;
     refreshKnot();
@@ -108,17 +109,16 @@
     refreshKnot();
     radiusText();
   });
+  //Button actions to make knot rotate
   $('#leftRotation').on('click', function() {
     b -= 20;
     rotation = " " + a + " " + b + " " + c + " ";
     refreshKnot();
-    radiusText();
   });
   $('#rightRotation').on('click', function() {
     b += 20;
     rotation = " " + a + " " + b + " " + c + " ";
     refreshKnot();
-    radiusText();
   });
   </script>
 </body>
