@@ -64,8 +64,6 @@
   var b = 0;
   var c = 0;
   var rotation = " " + a + " " + b + " " + c + " ";
-  console.log(rotation);
-  console.log(c)
   // updated knot after value knot changes, refactor
   var refreshKnot = function() {
     $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
@@ -111,7 +109,7 @@
     radiusText();
   });
   $('#leftRotation').on('click', function() {
-    a = a + 20;
+    b -= 20;
     rotation = " " + a + " " + b + " " + c + " ";
     refreshKnot();
     radiusText();
