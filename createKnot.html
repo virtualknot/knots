@@ -152,6 +152,16 @@
     rotation = " " + a + " " + b + " " + c + " ";
     refreshKnot();
   });
+  $('#zUpRotation').on('click', function() {
+    c -= 20;
+    rotation = " " + a + " " + b + " " + c + " ";
+    refreshKnot();
+  });
+  $('#zDownRotation').on('click', function() {
+    c += 20;
+    rotation = " " + a + " " + b + " " + c + " ";
+    refreshKnot();
+  });
   </script>
 </body>
 </html>
