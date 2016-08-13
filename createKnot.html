@@ -53,10 +53,26 @@
     <a-entity>
       <a-entity id="rightRotation" geometry="primitive:plane" scale=".7 .7 .7" position ="3.5 -1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-128.png)"</a-entity>
     </a-entity>
+    <a-entity>
+      <a-entity id="topRotation" geometry="primitive:plane" scale=".7 .7 .7" position ="4.5 1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-up-b-128.png)"</a-entity>
+    </a-entity>
+    <a-entity>
+      <a-entity id="bottomRotation" geometry="primitive:plane" scale=".7 .7 .7" position ="4.5 -1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-128.png)"</a-entity>
+    </a-entity>
     <a-sky color="#777DA7"></a-sky>
   </a-scene>
   <script>
   //mind your p's and q's
+  $('#upRotation').on('click', function() {
+    a -= 20;
+    rotation = " " + a + " " + b + " " + c + " ";
+    refreshKnot();
+  });
+  $('#downRotation').on('click', function() {
+    a += 20;
+    rotation = " " + a + " " + b + " " + c + " ";
+    refreshKnot();
+  });
   var pVal = 2;
   var qVal = 3;
   var radius = 0.2;
@@ -109,7 +125,7 @@
     refreshKnot();
     radiusText();
   });
-  //Button actions to make knot rotate
+  //Button actions to make knot rotate, could refactor passing in the variable we want to change
   $('#leftRotation').on('click', function() {
     b -= 20;
     rotation = " " + a + " " + b + " " + c + " ";
@@ -117,6 +133,16 @@
   });
   $('#rightRotation').on('click', function() {
     b += 20;
+    rotation = " " + a + " " + b + " " + c + " ";
+    refreshKnot();
+  });
+  $('#upRotation').on('click', function() {
+    a -= 20;
+    rotation = " " + a + " " + b + " " + c + " ";
+    refreshKnot();
+  });
+  $('#downRotation').on('click', function() {
+    a += 20;
     rotation = " " + a + " " + b + " " + c + " ";
     refreshKnot();
   });
