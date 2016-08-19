@@ -95,6 +95,9 @@
   var radiusText = function() {
     return $('.radiusText').attr("text", "text:radius: " + radius.toFixed(2));
   };
+  var rotationText = function(letter) {
+    return $('.rotationText').attr("text", "text:rotation: " + letter);
+  };
   //Button actions to change p and q values
   $('#upP').on('click', function() {
     pVal++
