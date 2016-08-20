@@ -53,6 +53,8 @@
     <a-entity class="vals rotationText" position="5.4 .47 0" material="color:#F7CAC9" scale=".25 .25 .25" rotation="0 0 0" text="text:zup"></a-entity>
     <a-entity class="vals rotationText" position="5.35 -.6 0" material="color:#F7CAC9" scale=".25 .25 .25" rotation="0 0 0" text="text:zdown"></a-entity>
     <a-entity class="vals rotationText" position="5.5 .3 0" material="color:#F7CAC9" scale=".25 .25 .25" rotation="0 0 -90" text="text:rotation"></a-entity>
+    <a-entity class="vals rotationNumber" position="5.5 3 0" material="color:#F7CAC9" scale="1 1 1" rotation="0 0 0" text="text:rotation"></a-entity>
+    <!-- rotation buttons -->
     <a-entity>
       <a-entity id="leftRotation" geometry="primitive:plane" scale=".7 .7 .7" position ="3.5 1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-up-b-128.png)"</a-entity>
     </a-entity>
@@ -95,8 +97,8 @@
   var radiusText = function() {
     return $('.radiusText').attr("text", "text:radius: " + radius.toFixed(2));
   };
-  var rotationText = function(letter) {
-    return $('.rotationText').attr("text", "text:rotation: " + letter);
+  var rotationNumber = function() {
+    return $('.rotationNumber').attr("text", "text:rotation:" + rotation);
   };
   //Button actions to change p and q values
   $('#upP').on('click', function() {
@@ -135,6 +137,7 @@
     b -= 20;
     rotation = " " + a + " " + b + " " + c + " ";
     refreshKnot();
+    rotationNumber();
   });
   $('#rightRotation').on('click', function() {
     b += 20;
