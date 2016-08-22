@@ -83,7 +83,10 @@
   var a = 0;
   var b = 0;
   var c = 0;
-  var rotation = " " + a + " " + b + " " + c + " ";
+  var rotationcleanse = function(type) {
+    return Math.abs(type);
+  }
+  var rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
   // updated knot after value knot changes, refactor
   var refreshKnot = function() {
     $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
@@ -135,49 +138,48 @@
   //Button actions to make knot rotate, could refactor passing in the variable we want to change
   $('#leftRotation').on('click', function() {
     b -= 20;
-    rotation = " " + a + " " + b + " " + c + " ";
+    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
     refreshKnot();
     rotationNumber();
   });
   $('#rightRotation').on('click', function() {
     b += 20;
-    rotation = " " + a + " " + b + " " + c + " ";
-    refreshKnot();
+    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";    refreshKnot();
     rotationNumber();
   });
   $('#upRotation').on('click', function() {
     a -= 20;
-    rotation = " " + a + " " + b + " " + c + " ";
+    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";    refreshKnot();
     refreshKnot();
     rotationNumber();
   });
   $('#downRotation').on('click', function() {
     a += 20;
-    rotation = " " + a + " " + b + " " + c + " ";
+    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";    refreshKnot();
     refreshKnot();
     rotationNumber();
   });
   $('#upRotation').on('click', function() {
     a -= 20;
-    rotation = " " + a + " " + b + " " + c + " ";
+    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";    refreshKnot();
     refreshKnot();
     rotationNumber();
   });
   $('#downRotation').on('click', function() {
     a += 20;
-    rotation = " " + a + " " + b + " " + c + " ";
+    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";    refreshKnot();
     refreshKnot();
     rotationNumber();
   });
   $('#zUpRotation').on('click', function() {
     c -= 20;
-    rotation = " " + a + " " + b + " " + c + " ";
+    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";    refreshKnot();
     refreshKnot();
     rotationNumber();
   });
   $('#zDownRotation').on('click', function() {
     c += 20;
-    rotation = " " + a + " " + b + " " + c + " ";
+    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";    refreshKnot();
     refreshKnot();
     rotationNumber();
   });
