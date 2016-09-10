@@ -19,6 +19,7 @@
     <a-entity id="knot">
       <a-entity id="knott" geometry="primitive:torusKnot; p:" + pVal + "; q:" + qVal+ ";" rotation="0 0 0" material="color:#D5573B"></a-entity>
     </a-entity>
+    <!-- up and down movement buttons -->
     <a-entity>
       <a-entity id="up" geometry="primitive:plane" scale=".7 .7 .7" position ="-5.5 1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-up-b-128.png)"</a-entity>
     </a-entity>
@@ -107,6 +108,12 @@
   var c = 0;
   // colors array and function
   var colors = ['color:white' ,'color:black', 'color:silver', 'color:#F16785', 'color:AliceBlue', 'color:plum', 'color:wheat', 'color:SteelBlue', 'color:tomato'];
+
+  var knotMover = function(position, direction) {
+    var positions = position.split(" ");
+    var y = Math.abs(positions[1]);
+    return positions[0] + y + positions[2];
+  }
 
   var colorChanger = function(colorArray) {
     var colorIndex = Math.floor(Math.random() * colorsArray.length);
