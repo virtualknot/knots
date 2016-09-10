@@ -21,7 +21,7 @@
     </a-entity>
     <!-- up and down movement buttons -->
     <a-entity>
-      <a-entity id="up" geometry="primitive:plane" scale=".7 .7 .7" position ="-5.5 1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-up-b-128.png)"</a-entity>
+      <a-entity id="upKnot" geometry="primitive:plane" scale=".7 .7 .7" position ="-5.5 1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-up-b-128.png)"</a-entity>
     </a-entity>
     <a-entity>
       <a-entity id="down" geometry="primitive:plane" scale=".7 .7 .7" position ="-5.5 -1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-128.png)"</a-entity>
@@ -112,6 +112,9 @@
   var knotMover = function(position, direction) {
     var positions = position.split(" ");
     var y = Math.abs(positions[1]);
+    var newNum = y + 10;
+    console.log(typeof newNum);
+    console.log('y in knotmover', newNum);
     return positions[0] + y + positions[2];
   }
 
@@ -127,6 +130,7 @@
   // updated knot after value knot changes, refactor
   var refreshKnot = function() {
     $('#knott').attr("geometry", "primitive:torusKnot; p:" + pVal + "; q:" + qVal + "; radiusTubular:" + radius +";");
+    $('knott').attr("position", position);
     $('#knott').attr("rotation", rotation);
   };
   // updates value text tags after knot changes, refactor
@@ -220,6 +224,20 @@
     rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
     refreshKnot();
     rotationNumber();
+  });
+  $('#upKnot').on('click', function() {
+    var position = this.getAttribute('position');
+    var splitPositions = position.split(" ");
+    var x = Math.abs(position[0]);
+    var y = Math.abs(position[1]);
+    var z = Math.abs(position[2]);
+    y += 2;
+    position = " " + x + " " + y + " " + z + " ";
+    console.log(position);
+    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
+    refreshKnot();
+    rotationNumber();
+    // $('.positionNumber').attr("text", "text:position:" + rotation)
   });
   </script>
 </body>
