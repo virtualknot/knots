@@ -120,6 +120,7 @@
 
   var colorChanger = function(colorArray) {
     var colorIndex = Math.floor(Math.random() * colorsArray.length);
+    console.log('colorIndex', colorIndex);
     return colorArray[colorIndex];
   }
   // Rotation function and string
@@ -225,9 +226,16 @@
     refreshKnot();
     rotationNumber();
   });
+  $('#upColor').on('click', function() {
+    var newColor = colorChanger(color);
+    console.log(newColor);
+    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
+    refreshKnot();
+    rotationNumber();
+  });
   $('#upKnot').on('click', function() {
     var currentPosition = this.getAttribute('position');
-    var newY = (currentPosition.y);
+
     newY = newY + 2;
     console.log('newY', newY)
     position = " " + currentPosition.x + " " + newY + " " + currentPosition.z + " ";
@@ -235,7 +243,7 @@
     rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
     refreshKnot();
     rotationNumber();
-    // $('.positionNumber').attr("text", "text:position:" + rotation)
+    $('.positionNumber').attr("text", "text:position:" + rotation)
   });
   </script>
 </body>
