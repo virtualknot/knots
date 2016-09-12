@@ -108,7 +108,7 @@
   var c = 0;
   // colors array and function
   var colors = ['color:white' ,'color:black', 'color:silver', 'color:#F16785', 'color:AliceBlue', 'color:plum', 'color:wheat', 'color:SteelBlue', 'color:tomato'];
-
+  var position;
   var knotMover = function(position, direction) {
     var positions = position.split(" ");
     var y = Math.abs(positions[1]);
@@ -226,13 +226,11 @@
     rotationNumber();
   });
   $('#upKnot').on('click', function() {
-    var position = this.getAttribute('position');
-    var splitPositions = position.split(" ");
-    var x = Math.abs(position[0]);
-    var y = Math.abs(position[1]);
-    var z = Math.abs(position[2]);
-    y += 2;
-    position = " " + x + " " + y + " " + z + " ";
+    var currentPosition = this.getAttribute('position');
+    var newY = (currentPosition.y);
+    newY = newY + 2;
+    console.log('newY', newY)
+    position = " " + currentPosition.x + " " + newY + " " + currentPosition.z + " ";
     console.log(position);
     rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
     refreshKnot();
