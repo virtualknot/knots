@@ -119,7 +119,7 @@
   }
 
   var colorChanger = function(colorArray) {
-    var colorIndex = Math.floor(Math.random() * colorsArray.length);
+    var colorIndex = Math.floor(Math.random() * colorArray.length);
     console.log('colorIndex', colorIndex);
     return colorArray[colorIndex];
   }
@@ -227,7 +227,7 @@
     rotationNumber();
   });
   $('#upColor').on('click', function() {
-    var newColor = colorChanger(color);
+    var newColor = colorChanger(colors);
     console.log(newColor);
     rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
     refreshKnot();
