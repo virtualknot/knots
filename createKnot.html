@@ -229,6 +229,7 @@
   $('#upColor').on('click', function() {
     var newColor = colorChanger(colors);
     console.log(newColor);
+    $('#knott').attr('material', newColor);
     rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
     refreshKnot();
     rotationNumber();
