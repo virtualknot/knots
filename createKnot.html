@@ -135,8 +135,8 @@
     $('#knott').attr("rotation", rotation);
   };
   // updates value text tags after knot changes, refactor
-  var valText = function(target, val) {
-    $(target).attr("text", "text:pVal: " + val);
+  var valText = function(target, val, letter) {
+    $(target).attr("text", "text:" + letter + "Val:" + val);
   };
   // updates radius text tags after radius changes, refactor
   var radiusText = function() {
@@ -149,17 +149,17 @@
   $('#upP').on('click', function() {
     pVal++
     refreshKnot();
-    valText('.pValText', pVal);
+    valText('.pValText', pVal, 'p');
   });
   $('#downP').on('click', function() {
     pVal--
     refreshKnot();
-    valText('.pValText', pVal);
+    valText('.pValText', pVal, 'p');
   });
   $('#upQ').on('click', function() {
     qVal++
     refreshKnot();
-    valText('.qValText', qVal);
+    valText('.qValText', qVal, 'q');
   });
   $('#downQ').on('click', function() {
     qVal--
