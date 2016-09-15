@@ -120,7 +120,6 @@
 
   var colorChanger = function(colorArray) {
     var colorIndex = Math.floor(Math.random() * colorArray.length);
-    console.log('colorIndex', colorIndex);
     return colorArray[colorIndex];
   }
   // Rotation function and string
@@ -228,7 +227,6 @@
   });
   $('#upColor').on('click', function() {
     var newColor = colorChanger(colors);
-    console.log(newColor);
     $('#knott').attr('material', newColor);
     rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
     refreshKnot();
@@ -243,7 +241,6 @@
   })
   $('#upKnot').on('click', function() {
     var currentPosition = this.getAttribute('position');
-
     newY = newY + 2;
     console.log('newY', newY)
     position = " " + currentPosition.x + " " + newY + " " + currentPosition.z + " ";
