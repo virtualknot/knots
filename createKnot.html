@@ -230,14 +230,14 @@
     rotationNumber();
   });
   $('#upColor').on('click', function() {
-    var newColor = colorChanger(colors);
+    var newColor = colorChanger(readyColors);
     $('#knott').attr('material', newColor);
     rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
     refreshKnot();
     rotationNumber();
   });
   $('#downColor').on('click', function() {
-    var newColor = colorChanger(colors);
+    var newColor = colorChanger(readyColors);
     $('#knott').attr('material', newColor);
     rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
     refreshKnot();
