@@ -107,7 +107,11 @@
   var b = 0;
   var c = 0;
   // colors array and function
-  var colors = ['color:white' ,'color:black', 'color:silver', 'color:#F16785', 'color:plum', 'color:wheat', 'color:tomato'];
+  var colors = ['white' ,'black', 'silver', '#F16785', 'plum', 'wheat', 'tomato'];
+  var readyColors = colors.map(function(color) {
+    return 'color:' + color;
+  });
+  console.log(JSON.stringify(readyColors));
   var position;
   var knotMover = function(position, direction) {
     var positions = position.split(" ");
