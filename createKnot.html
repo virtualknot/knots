@@ -108,10 +108,12 @@
   var c = 0;
   // colors array and function
   var colors = ['white' ,'black', 'silver', '#F16785', 'plum', 'wheat', 'tomato', '#c5d5cb', '#9fa8a3', '#e3e0cf', '#edd9c0', '#e62739','#fae596', '#89bdd', '#7d4627', '#b56969', '#22264b', '#e6cf8b', '#98dafc'];
+  // adds the proper attribute for color
   var readyColors = colors.map(function(color) {
     return 'color:' + color;
   });
-  console.log(JSON.stringify(readyColors));
+  //previous colors array
+  var previousColors = [];
   var position;
   var knotMover = function(position, direction) {
     var positions = position.split(" ");
@@ -121,7 +123,7 @@
     console.log('y in knotmover', newNum);
     return positions[0] + y + positions[2];
   }
-
+  //color randomizer
   var colorChanger = function(colorArray) {
     var colorIndex = Math.floor(Math.random() * colorArray.length);
     return colorArray[colorIndex];
