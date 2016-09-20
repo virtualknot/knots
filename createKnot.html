@@ -232,6 +232,10 @@
     rotationNumber();
   });
   $('#upColor').on('click', function() {
+    var knotEl = document.getElementById('knott');
+    var curColor = knotEl.getAttribute('material');
+    previousColors.push(curColor.color);
+    console.log(previousColors)
     var newColor = colorChanger(readyColors);
     $('#knott').attr('material', newColor);
     rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
@@ -239,6 +243,7 @@
     rotationNumber();
   });
   $('#downColor').on('click', function() {
+    console.log(curColor);
     var newColor = colorChanger(readyColors);
     $('#knott').attr('material', newColor);
     rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
