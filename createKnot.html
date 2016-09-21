@@ -243,12 +243,14 @@
     rotationNumber();
   });
   $('#downColor').on('click', function() {
-    var newColor = previousColors.pop();
-    console.log(newColor);
-    $('#knott').attr('material', 'color:' + newColor);
-    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
-    refreshKnot();
-    rotationNumber();
+    if(previousColors.length) {
+      var newColor = previousColors.pop();
+      console.log(newColor);
+      $('#knott').attr('material', 'color:' + newColor);
+      rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
+      refreshKnot();
+      rotationNumber();
+    }
   })
   $('#upKnot').on('click', function() {
     var currentPosition = this.getAttribute('position');
