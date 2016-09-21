@@ -243,8 +243,8 @@
     rotationNumber();
   });
   $('#downColor').on('click', function() {
-    console.log(curColor);
-    var newColor = colorChanger(readyColors);
+    var newColor = previousColors.pop();
+    console.log(newColor);
     $('#knott').attr('material', newColor);
     rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
     refreshKnot();
