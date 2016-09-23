@@ -231,21 +231,22 @@
     refreshKnot();
     rotationNumber();
   });
+  // change color actions
+  //up randomizes the color and places those in the colors stack
   $('#upColor').on('click', function() {
     var knotEl = document.getElementById('knott');
     var curColor = knotEl.getAttribute('material');
     previousColors.push(curColor.color);
-    console.log(previousColors)
     var newColor = colorChanger(readyColors);
     $('#knott').attr('material', newColor);
     rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
     refreshKnot();
     rotationNumber();
   });
+  // down pops off colors stack and go to the previous color
   $('#downColor').on('click', function() {
     if(previousColors.length) {
       var newColor = previousColors.pop();
-      console.log(newColor);
       $('#knott').attr('material', 'color:' + newColor);
       rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
       refreshKnot();
