@@ -254,7 +254,8 @@
     }
   });
   $('#upKnot').on('click', function() {
-    var knotty = $('knott')
+    var knotty = document.getElementById('knott')
+    console.log(knotty);
     var currentPosition = knotty.getAttribute('position');
     console.log(currentPosition);
     currentPosition.y += 2;
