@@ -255,15 +255,15 @@
   });
   $('#upKnot').on('click', function() {
     var knotty = document.getElementById('knott')
-    console.log(knotty);
     var currentPosition = knotty.getAttribute('position');
     console.log(currentPosition);
-    currentPosition.y += 2;
-    console.log('newY', currentPosition);
-    position = " " + currentPosition.x + " " + currentPosition.y + " " + currentPosition.z + " ";
+    var newY = currentPosition.y += 2;
+    console.log('newY', newY);
+    position = " " + currentPosition.x + " " + newY + " " + currentPosition.z + " ";
     console.log(position);
+    $('#knott').attr('position', position);
     rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
-    $('.positionNumber').attr("text", "text:position:" + rotation)
+    // $('.positionNumber').attr("text", "text:position:" + position);
     refreshKnot();
     rotationNumber();
   });
