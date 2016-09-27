@@ -264,6 +264,16 @@
     refreshKnot();
     rotationNumber();
   });
+  $('#downKnot').on('click', function() {
+    var knotty = document.getElementById('knott')
+    var currentPosition = knotty.getAttribute('position');
+    var newY = currentPosition.y -= 2;
+    position = " " + currentPosition.x + " " + newY + " " + currentPosition.z + " ";
+    $('#knott').attr('position', position);
+    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
+    refreshKnot();
+    rotationNumber();
+  });
   </script>
 </body>
 </html>
