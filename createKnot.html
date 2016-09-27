@@ -256,11 +256,8 @@
   $('#upKnot').on('click', function() {
     var knotty = document.getElementById('knott')
     var currentPosition = knotty.getAttribute('position');
-    console.log(currentPosition);
     var newY = currentPosition.y += 2;
-    console.log('newY', newY);
     position = " " + currentPosition.x + " " + newY + " " + currentPosition.z + " ";
-    console.log(position);
     $('#knott').attr('position', position);
     rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
     // $('.positionNumber').attr("text", "text:position:" + position);
