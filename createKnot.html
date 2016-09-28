@@ -150,6 +150,16 @@
   var rotationNumber = function() {
     return $('.rotationNumber').attr("text", "text:rotation:" + rotation);
   };
+  var knotElevator = function(direction) {
+    var knotty = document.getElementById('knott')
+    var currentPosition = knotty.getAttribute('position');
+    var newY = currentPosition.y += direction;
+    position = " " + currentPosition.x + " " + newY + " " + currentPosition.z + " ";
+    $('#knott').attr('position', position);
+    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
+    refreshKnot();
+    rotationNumber();
+  }
   //Button actions to change p and q values
   $('#upP').on('click', function() {
     pVal++
@@ -254,25 +264,10 @@
     }
   });
   $('#upKnot').on('click', function() {
-    var knotty = document.getElementById('knott')
-    var currentPosition = knotty.getAttribute('position');
-    var newY = currentPosition.y += 2;
-    position = " " + currentPosition.x + " " + newY + " " + currentPosition.z + " ";
-    $('#knott').attr('position', position);
-    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
-    // $('.positionNumber').attr("text", "text:position:" + position);
-    refreshKnot();
-    rotationNumber();
+    knotElevator(2);
   });
   $('#downKnot').on('click', function() {
-    var knotty = document.getElementById('knott')
-    var currentPosition = knotty.getAttribute('position');
-    var newY = currentPosition.y -= 2;
-    position = " " + currentPosition.x + " " + newY + " " + currentPosition.z + " ";
-    $('#knott').attr('position', position);
-    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
-    refreshKnot();
-    rotationNumber();
+    knotElevator(-2)
   });
   </script>
 </body>
