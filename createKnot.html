@@ -119,8 +119,6 @@
     var positions = position.split(" ");
     var y = Math.abs(positions[1]);
     var newNum = y + 10;
-    console.log(typeof newNum);
-    console.log('y in knotmover', newNum);
     return positions[0] + y + positions[2];
   };
   //color randomizer
@@ -264,10 +262,10 @@
     }
   });
   $('#upKnot').on('click', function() {
-    knotElevator(2);
+    knotElevator(1);
   });
   $('#downKnot').on('click', function() {
-    knotElevator(-2)
+    knotElevator(-1)
   });
   </script>
 </body>
