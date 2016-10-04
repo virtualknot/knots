@@ -271,6 +271,11 @@
   $('#downKnot').on('click', function() {
     knotElevator(-1)
   });
+  $('#off').on('click', function() {
+    console.log('in off')
+    event.preventDefault();
+    $('#upKnot').attr('material', 'color:#777DA7');
+  })
   </script>
 </body>
 </html>
