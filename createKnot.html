@@ -97,7 +97,7 @@
       <a-entity class="switchColor" id="zDownRotation" geometry="primitive:plane" scale=".7 .7 .7" position ="5.5 -1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-128.png)"</a-entity>
     </a-entity>
     <a-entity>
-      <a-entity class="switchColor" id="off" geometry="primitive:plane" scale=".7 .7 .7" position ="0 2.5 0" material="color:grey"</a-entity>
+      <a-entity class="switchColor" id="off" geometry="primitive:plane" scale=".7 .7 .7" position ="0 2.5 0" material="src:url(https://cdn0.iconfinder.com/data/icons/rcons-basic/16/lightbulb-512.png)"</a-entity>
     </a-entity>
     <a-sky color="#777DA7"></a-sky>
   </a-scene>
@@ -272,7 +272,6 @@
     knotElevator(-1)
   });
   $('#off').on('click', function() {
-    event.preventDefault();
     $('#upKnot').attr('material', 'color:#777DA7');
     $('#downKnot').attr('material', 'color:#777DA7');
     $('.switchColor').attr('material', 'color:#777DA7');
