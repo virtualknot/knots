@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Create Your Own Knot</title>
+  <title>VirtualKnot</title>
   <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
   <script src="https://rawgit.com/ngokevin/aframe-text-component/master/dist/aframe-text-component.min.js"></script>
@@ -97,7 +97,7 @@
       <a-entity class="switchColor" id="zDownRotation" geometry="primitive:plane" scale=".7 .7 .7" position ="5.5 -1 0" material="src:url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-128.png)"</a-entity>
     </a-entity>
     <a-entity>
-      <a-entity class="switchColor" id="off" geometry="primitive:plane" scale=".7 .7 .7" position ="0 2.5 0" material="src:url(https://cdn0.iconfinder.com/data/icons/rcons-basic/16/lightbulb-512.png)"</a-entity>
+      <a-entity class="switchColor" id="dim" geometry="primitive:plane" scale=".7 .7 .7" position ="0 2.5 0" material="src:url(https://cdn0.iconfinder.com/data/icons/rcons-basic/16/lightbulb-512.png)"</a-entity>
     </a-entity>
     <a-sky color="#777DA7"></a-sky>
   </a-scene>
@@ -271,7 +271,8 @@
   $('#downKnot').on('click', function() {
     knotElevator(-1)
   });
-  $('#off').on('click', function() {
+  //dims down all of the buttons, yet they are still usable
+  $('#dim').on('click', function() {
     $('#upKnot').attr('material', 'color:#777DA7');
     $('#downKnot').attr('material', 'color:#777DA7');
     $('.switchColor').attr('material', 'color:#777DA7');
