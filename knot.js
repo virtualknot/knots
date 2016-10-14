@@ -49,7 +49,7 @@ $(document).ready(function() {
     return $('.rotationNumber').attr("text", "text:rotation:" + rotation);
   };
   var knotElevator = function(direction) {
-    var knotty = document.getElementById('knott')
+    var knotty = document.getElementById('knott');
     var currentPosition = knotty.getAttribute('position');
     var newY = currentPosition.y += direction;
     position = " " + currentPosition.x + " " + newY + " " + currentPosition.z + " ";
@@ -57,25 +57,25 @@ $(document).ready(function() {
     rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
     refreshKnot();
     rotationNumber();
-  }
+  };
   //Button actions to change p and q values
   $('#upP').on('click', function() {
-    pVal++
+    pVal++;
     refreshKnot();
     valText('.pValText', pVal, 'p');
   });
   $('#downP').on('click', function() {
-    pVal--
+    pVal--;
     refreshKnot();
     valText('.pValText', pVal, 'p');
   });
   $('#upQ').on('click', function() {
-    qVal++
+    qVal++;
     refreshKnot();
     valText('.qValText', qVal, 'q');
   });
   $('#downQ').on('click', function() {
-    qVal--
+    qVal--;
     refreshKnot();
     valText('.qValText', qVal, 'q');
   });
@@ -166,12 +166,12 @@ $(document).ready(function() {
     knotElevator(1);
   });
   $('#downKnot').on('click', function() {
-    knotElevator(-1)
+    knotElevator(-1);
   });
   //dims down all of the buttons, yet they are still usable
   $('#dim').on('click', function() {
     $('#upKnot').attr('material', 'color:#777DA7');
     $('#downKnot').attr('material', 'color:#777DA7');
     $('.switchColor').attr('material', 'color:#777DA7');
-  })
+  });
 });
