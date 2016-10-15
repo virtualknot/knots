@@ -15,12 +15,6 @@ $(document).ready(function() {
   //previous colors array
   var previousColors = [];
   var position;
-  var knotMover = function(position, direction) {
-    var positions = position.split(" ");
-    var y = Math.abs(positions[1]);
-    var newNum = y + 10;
-    return positions[0] + y + positions[2];
-  };
   //color randomizer
   var colorChanger = function(colorArray) {
     var colorIndex = Math.floor(Math.random() * colorArray.length);
@@ -48,6 +42,7 @@ $(document).ready(function() {
   var rotationNumber = function() {
     return $('.rotationNumber').attr("text", "text:rotation:" + rotation);
   };
+  //knotElevator moves the knot up and down
   var knotElevator = function(direction) {
     var knotty = document.getElementById('knott');
     var currentPosition = knotty.getAttribute('position');
