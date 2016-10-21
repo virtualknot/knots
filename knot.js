@@ -165,12 +165,12 @@ $(document).ready(function() {
   });
   //dims down all of the buttons, yet they are still usable
   $('#dim').on('click', function() {
-    $('#upKnot').attr('material', 'color:#777DA7');
-    $('#downKnot').attr('material', 'color:#777DA7');
+    // $('#upKnot').attr('material', 'color:#777DA7');
+    // $('#downKnot').attr('material', 'color:#777DA7');
     $('.switchColor').attr('material', 'color:#777DA7');
     $('.switchTag').attr('material', 'color:#777DA7');
   });
   $('#lit').on('click', function() {
-    $('.switchColor').attr('material', 'color:#F7CAC9');
+    location.reload();
   });
 });
