@@ -31,6 +31,13 @@ $(document).ready(function() {
     $('knott').attr("position", position);
     $('#knott').attr("rotation", rotation);
   };
+  //refresh function for rotation clicks
+  var rotationRefresh = function(letterChange, numberToChangeBy) {
+    eval(letterChange + " += " + numberToChangeBy);
+    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
+    refreshKnot();
+    rotationNumber();
+  };
   // updates value text tags after knot changes, refactor
   var valText = function(target, val, letter) {
     $(target).attr("text", "text:" + letter + "Val:" + val);
@@ -87,52 +94,22 @@ $(document).ready(function() {
   });
   //Button actions to make knot rotate, could refactor passing in the variable we want to change
   $('#leftRotation').on('click', function() {
-    b -= 20;
-    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
-    refreshKnot();
-    rotationNumber();
+    rotationRefresh('b', -20);
   });
   $('#rightRotation').on('click', function() {
-    b += 20;
-    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
-    refreshKnot();
-    rotationNumber();
+    rotationRefresh('b', 20);
   });
   $('#upRotation').on('click', function() {
-    a -= 20;
-    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
-    refreshKnot();
-    rotationNumber();
+    rotationRefresh('a', -20);
   });
   $('#downRotation').on('click', function() {
-    a += 20;
-    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
-    refreshKnot();
-    rotationNumber();
-  });
-  $('#upRotation').on('click', function() {
-    a -= 20;
-    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
-    refreshKnot();
-    rotationNumber();
-  });
-  $('#downRotation').on('click', function() {
-    a += 20;
-    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
-    refreshKnot();
-    rotationNumber();
+    rotationRefresh('a', 20);
   });
   $('#zUpRotation').on('click', function() {
-    c -= 20;
-    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
-    refreshKnot();
-    rotationNumber();
+    rotationRefresh('c', -20);
   });
   $('#zDownRotation').on('click', function() {
-    c += 20;
-    rotation = " " + rotationcleanse(a) + " " + rotationcleanse(b) + " " + rotationcleanse(c) + " ";
-    refreshKnot();
-    rotationNumber();
+    rotationRefresh('c', 20);
   });
   // change color actions
   //up randomizes the color and places those in the colors stack
