@@ -1,0 +1,23 @@
+{
+  "name": "VirtualKnot.com",
+  "version": "1.0.0",
+  "description": "virtual torus knot sandbox",
+  "main": "client/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/virtualknot/knots.git"
+  },
+  "author": "Chris Battenfield",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/virtualknot/knots/issues"
+  },
+  "homepage": "https://github.com/virtualknot/knots#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
