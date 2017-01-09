@@ -163,14 +163,4 @@ $(document).ready(function() {
   $('#downKnot').on('click', function() {
     knotElevator(-1);
   });
-  //dims down all of the buttons, yet they are still usable
-  $('#dim').on('click', function() {
-    // $('#upKnot').attr('material', 'color:#777DA7');
-    // $('#downKnot').attr('material', 'color:#777DA7');
-    $('.switchColor').attr('material', 'color:#777DA7');
-    $('.switchTag').attr('material', 'color:#777DA7');
-  });
-  $('#lit').on('click', function() {
-    location.reload();
-  });
 });
