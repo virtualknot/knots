@@ -92,7 +92,7 @@ $(document).ready(function() {
     refreshKnot();
     radiusText();
   });
-  //Button actions to make knot rotate, could refactor passing in the variable we want to change
+  //Button actions to make knot rotate
   $('#leftRotation').on('click', function() {
     rotationRefresh('b', -20);
   });
