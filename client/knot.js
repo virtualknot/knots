@@ -2,7 +2,7 @@ $(document).ready(function() {
   //mind your p's and q's
   var pVal = 2;
   var qVal = 3;
-  var radius = 0.2;
+  var radius = 0.1;
   var a = 0;
   var b = 0;
   var c = 0;
